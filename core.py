@@ -134,12 +134,25 @@ def search(subject: str, area: str, page=-1):
 
         parse_html(shijuan_url, shijuan_name)
 
+def init_config():
+    png_tmp = 'tmp'
+    data_dir = 'data'
+    data_data_dir = 'data\\data'
+    if not os.path.exists(png_tmp):
+        os.mkdir(png_tmp)
+    if not os.path.exists(data_dir):
+        os.mkdir(data_dir)
+    if not os.path.exists(data_data_dir):
+        os.mkdir(data_data_dir)
 
 def search_data():
     subject = input("请输入学科:")
     area = input("请输入地区:")
     search(subject, area)
 
+
+
+init_config()
 
 if __name__ == '__main__':
     search_data()
